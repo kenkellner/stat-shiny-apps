@@ -38,6 +38,10 @@ function(input, output) {
 
     if(length(xy$x) > 1){
       abline(m,col='red',lwd=2)
+
+      if(resids){
+        segments(xy$x,xy$y,xy$x,m$fitted.values,lty=2,col='gray',lwd=2)
+      }
     }
 
   })

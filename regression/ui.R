@@ -13,6 +13,7 @@ fluidPage(
       "and the correlation is:",
       div(style = "color: blue", strong(textOutput("corr_text"))),
       br(),
+      checkboxInput("resids", label = "Plot Residuals?", value = TRUE),
       actionButton("reset_button", "Reset Points")
     ),
     mainPanel(
