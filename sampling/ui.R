@@ -12,7 +12,7 @@ fluidPage(
       # sliderInput("wt.sd", label = h3("Population SD"),
       #             min = 0, max = 30, value = 20),
       sliderInput("sample.size", label = h4("Sample Size"),
-                  min = 0, max = 100, value = 10),
+                  min = 0, max = 100, value = 5),
       br(),
 
       h4("Sample Mean:"),

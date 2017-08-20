@@ -63,12 +63,17 @@ function(input,output){
     sorted <- list()
     sorted$samp <- hist$samp[order(hist$samp)]
     sorted$mn <- hist$mn[order(hist$samp)]
+    
+    ymax <- max(c(sorted$mn*1.02,105))
+    ymin <- min(c(sorted$mn*0.98,95))
 
     par(mar=c(5,4,1,1))
-    plot(sorted$samp,sorted$mn,col='red',pch=19,cex=2,
+    plot(sorted$samp,sorted$mn,col='red',pch=19,cex=2,ylim=c(ymin,ymax),
          xlab='Sample Size',ylab="Sample Mean")
-    legend('bottomleft',lty=2,legend='Population Mean')
+    legend('topright',lty=2,col=c('black','red'),
+           legend=c('Population Mean','Error'))
     abline(h=inp$pop.mean,lwd=2,lty=2)
+    segments(sorted$samp,inp$pop.mean,sorted$samp,sorted$mn,col='red',lwd=2,lty=2)
 
   })
 
