@@ -1,5 +1,6 @@
 library(shiny)
 
+#Adapted from https://github.com/TimothyKBook/RegressionPlot
 fluidPage(
   titlePanel("Regression Simulator"),
   sidebarLayout(
